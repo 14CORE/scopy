@@ -682,7 +682,7 @@ bool CapturePlot::eventFilter(QObject *object, QEvent *event)
 {
 	if (object == canvas() && event->type() == QEvent::Resize) {
 		if (d_labelsEnabled) {
-			d_bottomHandlesArea->setLeftPadding(50 + axisWidget(QwtAxisId(QwtPlot::yLeft, d_activeVertAxis))->width());
+			d_bottomHandlesArea->setLeftPadding(50 + axisWidget(QwtAxisId(QwtPlot::yLeft, d_selected_channel))->width());
 			d_rightHandlesArea->setTopPadding(50 + 6);
 			Q_EMIT repositionTimeTrigger();
 		} else {
